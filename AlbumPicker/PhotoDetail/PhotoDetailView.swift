@@ -10,13 +10,14 @@ import PhotosUI
 
 struct PhotoDetailView: View {
     @ObservedObject var viewModel: PhotoDetailViewModel
-
+    
     var body: some View {
-        VStack {
+        GeometryReader { proxy in
             if let uiImage = viewModel.asset.loadUIImage() {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFill()
+                    .frame(width: proxy.size.width)
             }
             HStack {
                 Button(action: {
@@ -25,11 +26,22 @@ struct PhotoDetailView: View {
                     Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
                 }
             }
+            .position(CGPoint(x: proxy.frame(in: .local).midX,
+                              y: proxy.frame(in: .local).maxY))
         }
-        .padding()
         .navigationTitle("Photo Detail")
     }
 }
+
+struct PhotoDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let viewModel = PhotoDetailViewModel(asset: PHAsset())
+
+        PhotoDetailView(viewModel: viewModel)
+            .previewLayout(.sizeThatFits)
+    }
+}
+
 
 extension PHAsset {
     func loadUIImage() -> UIImage? {
