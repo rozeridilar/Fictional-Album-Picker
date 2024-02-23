@@ -10,24 +10,44 @@ import PhotosUI
 
 struct PhotoDetailView: View {
     @ObservedObject var viewModel: PhotoDetailViewModel
-    
+    @Namespace private var heartAnimationNamespace
+
+    private let heartIconId = "heartIcon"
     var body: some View {
         GeometryReader { proxy in
-            if let uiImage = viewModel.asset.loadUIImage() {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: proxy.size.width)
-            }
-            HStack {
-                Button(action: {
-                    viewModel.toggleFavorite()
-                }) {
-                    Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+            ZStack {
+                if let uiImage = viewModel.asset.loadUIImage() {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: proxy.size.width)
+                }
+
+                if viewModel.isFavorite {
+                    Image(systemName: "heart.fill")
+                        .matchedGeometryEffect(id: heartIconId, in: heartAnimationNamespace)
+                        .font(.system(size: 60)) // Make the icon larger
+                        .foregroundColor(.red)
+                        .position(CGPoint(x: proxy.size.width / 2, y: proxy.size.height / 2))
+                        .onTapGesture {
+                            withAnimation {
+                                viewModel.toggleFavorite()
+                            }
+                        }
                 }
             }
-            .position(CGPoint(x: proxy.frame(in: .local).midX,
-                              y: proxy.frame(in: .local).maxY))
+
+            if !viewModel.isFavorite {
+                Button(action: {
+                    withAnimation {
+                        viewModel.toggleFavorite()
+                    }
+                }) {
+                    Image(systemName: "heart")
+                        .matchedGeometryEffect(id: heartIconId, in: heartAnimationNamespace)
+                }
+                .position(CGPoint(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).maxY))
+            }
         }
         .navigationTitle("Photo Detail")
     }
