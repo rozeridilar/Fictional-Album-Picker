@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-25T19:01:24.922Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="-n1aBdco8BRkT6pdtP_N" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-25T19:06:10.567Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="iW5nKCC7JhjiTrDl2o6N" version="23.1.6" type="github">
   <diagram name="Page-1" id="XCaTFJHMV760R7Y61efN">
     <mxGraphModel dx="-1131" dy="675" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -22,7 +22,7 @@
         <mxCell id="zmnPSDRiie2Jrv4VDKoH-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="zmnPSDRiie2Jrv4VDKoH-7" target="zmnPSDRiie2Jrv4VDKoH-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="zmnPSDRiie2Jrv4VDKoH-7" value="Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="zmnPSDRiie2Jrv4VDKoH-7" value="Rest Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="2746" y="1790" width="353" height="60" as="geometry" />
         </mxCell>
         <mxCell id="zmnPSDRiie2Jrv4VDKoH-10" value="Cache Request" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;opacity=60;" vertex="1" parent="1">
@@ -64,6 +64,9 @@
         </mxCell>
         <mxCell id="zmnPSDRiie2Jrv4VDKoH-21" value="Cache Service" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;opacity=60;" vertex="1" parent="1">
           <mxGeometry x="3120" y="1610" width="353" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zmnPSDRiie2Jrv4VDKoH-23" value="Cache Services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="3130" y="1790" width="353" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
